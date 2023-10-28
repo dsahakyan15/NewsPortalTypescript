@@ -1,7 +1,9 @@
 import React from 'react'
 import Header from '../Header'
-import Card from '../Card'
 import NewsList from '../NewsList'
+import { searchAutoItem } from './App.interface'
+
+
 const App: React.FC = () => {
 
     const news = [
@@ -35,9 +37,28 @@ const App: React.FC = () => {
         }
     ]
 
+    const searchAutocomplite:searchAutoItem[] = [
+        {
+            text:'Hello',
+            rating:0.3
+        },
+        {
+            text: 'test',
+            rating: 0.4
+        },
+        {
+            text: 'smth',
+            rating: 0.1
+        },
+        {
+            text: 'barigun',
+            rating: 0.8
+        },
+    ]
+
     return (
         <div>
-            <Header />
+            <Header searchAutocomplite={searchAutocomplite}/>
             <NewsList news={news} />
         </div>
     )
